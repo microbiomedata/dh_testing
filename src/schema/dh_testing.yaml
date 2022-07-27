@@ -1,0 +1,34 @@
+name: dh_testing
+id: http://example.com/dh_testing
+description: "DH Testing"
+version: "1.0"
+
+default_range: string
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  dh_testing: http://example.com/dh_testing/
+
+default_prefix: dh_testing
+
+imports:
+  - linkml:types
+
+slots:
+  test_slot_1:
+    title: "Test Slot 1"
+    description: "Test slot 1"
+    required: true
+    multivalued: false
+
+  test_slot_2:
+    title: "Test Slot 2"
+    description: "Test slot 2"
+    required: true
+    multivalued: false
+
+classes:
+  test_class:
+    slots:
+      - test_slot_1
+      - test_slot_2
