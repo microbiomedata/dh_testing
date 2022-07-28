@@ -3,15 +3,44 @@ id: http://example.com/dh_testing
 description: "DH Testing"
 version: "1.0"
 
-prefixes:
-  linkml: https://w3id.org/linkml/
-  dh_testing: http://example.com/dh_testing/
+classes:
+  complex_tests:
+    slots:
+      - test_any_of_enums
+      - test_structured_pattern
+      - test_in_subset
 
 default_prefix: dh_testing
+
+enums:
+  test_enum_2:
+    name: test_enum_2
+    permissible_values:
+      pv2_1:
+        text: pv2_1
+      pv2_2:
+        text: pv2_2
+      pv_2_3:
+        text: pv_2_3
+  test_enum_3:
+    name: test_enum_3
+    permissible_values:
+      pv3_1:
+        text: pv3_1
+      pv3_2:
+        text: pv3_2
+      pv3_3:
+        text: pv3_3
+
+default_range: string
 
 imports:
   - linkml:types
   - dh_testing_from_sheets
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  dh_testing: http://example.com/dh_testing/
 
 settings:
   lc: '[a-z]+'
@@ -20,11 +49,33 @@ settings:
 slots:
   test_any_of_enums:
     any_of:
-      - range: test_enum_1
       - range: test_enum_2
-
+      - range: test_enum_3
   test_structured_pattern:
     structured_pattern:
       syntax: '{lc} {digits}'
       partial_match: false
       interpolated: true
+  test_in_subset:
+    name: test_in_subset
+    in_subset:
+      - subset1
+      - subset2
+
+subsets:
+  subset1:
+    description: subset one
+  subset2:
+    description: subset two
+
+
+
+
+
+
+
+
+
+
+
+

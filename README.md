@@ -2,6 +2,7 @@
 Sandbox for testing the content of various [LinkML](https://linkml.io/) schema features against [DataHarmonizer](https://github.com/cidgoh/DataHarmonizer)
 
 Motivated by
+- https://github.com/microbiomedata/sheets_and_friends/issues/46
 - https://github.com/microbiomedata/sheets_and_friends/issues/105
   - https://github.com/microbiomedata/sheets_and_friends/issues/104
     - MAM: check pipeline for converting NMDC/MIxS class (not type) ranges into patterns (via structured patterns) and then using the patterns to validate DataHarmonizer input
@@ -23,7 +24,20 @@ Therefore, most of these are at least mostly irrelevant now:
 
 Note that there are differences between DH's XXX and LinkML's sheets2linkml. Might be an opportunity for improving sheets2linkml.
 
-## observations
+## Google Sheets Observations
 - All non-string cells in a Google Sheet intended for schemasheets must be protected as string with an initial `'`. For example, integers, floats, booleans, dates
 - Make sure sheets don't have any merged cells
 - linkml minimum_value and maximum_value must be integers, not floats
+  - what can't a *_value be a float? LinkML issue? 
+
+## TODOs
+
+- probably skip generating docs with gen-project, unless it's using gen-docs under the hood (ie don't bother with gen-markdown)
+- ValueError: File "<file>", line 254, col 15 Unrecognized ifabsent action for slot 'test_ifabsent': 'replacement string'
+  - slot_uri works. learn how to use a string
+- subsets not getting directly generated from dh_testing sheets? See examples examples 
+- define test_any_of_enums in sheets?
+- define test_any_of_enums in sheets?
+- define test_structured_pattern in sheets
+- structured pattern doesn't seem to be working
+

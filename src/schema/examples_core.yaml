@@ -1,0 +1,13 @@
+name: examples
+id: http://example.com/examples
+description: examples
+version: "1.0"
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  examples: http://example.com/examples/
+
+default_prefix: examples
+
+imports:
+  - examples_from_sheet
