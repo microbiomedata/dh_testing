@@ -8,6 +8,8 @@ Motivated by
     - see also https://github.com/microbiomedata/sheets_and_friends/pull/115
 - https://github.com/microbiomedata/sheets_and_friends/issues/107
   - Several efforts underway to improve pipeline for retrieving EnvO and Uberon terms from public sources, providing a way for subject-matter experts to curate the retrieved lists, and then injecting per-environment enumerations for each of the MIxS environmental triad slots. **MAM: elaborate**.
+    - see also https://github.com/microbiomedata/sheets_and_friends/issues/133
+    - **MAM add more links**
 
 Looking good:
 - https://github.com/microbiomedata/sheets_and_friends/issues/106 (DH help screens)
@@ -21,3 +23,7 @@ Therefore, most of these are at least mostly irrelevant now:
 
 Note that there are differences between DH's XXX and LinkML's sheets2linkml. Might be an opportunity for improving sheets2linkml.
 
+## observations
+- All non-string cells in a Google Sheet intended for schemasheets must be protected as string with an initial `'`. For example, integers, floats, booleans, dates
+- Make sure sheets don't have any merged cells
+- linkml minimum_value and maximum_value must be integers, not floats

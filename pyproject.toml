@@ -8,6 +8,7 @@ authors = ["Mark Andrew Miller <MAM@lbl.gov>"]
 python = "^3.9"
 linkml = "^1.3.1"
 dpath = "^2.0.6"
+schemasheets = "^0.1.13"
 
 [tool.poetry.dev-dependencies]
 

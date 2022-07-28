@@ -1,0 +1,30 @@
+name: dh_testing
+id: http://example.com/dh_testing
+description: "DH Testing"
+version: "1.0"
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  dh_testing: http://example.com/dh_testing/
+
+default_prefix: dh_testing
+
+imports:
+  - linkml:types
+  - dh_testing_from_sheets
+
+settings:
+  lc: '[a-z]+'
+  digits: '[0-9]+'
+
+slots:
+  test_any_of_enums:
+    any_of:
+      - range: test_enum_1
+      - range: test_enum_2
+
+  test_structured_pattern:
+    structured_pattern:
+      syntax: '{lc} {digits}'
+      partial_match: false
+      interpolated: true
