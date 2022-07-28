@@ -14,21 +14,198 @@ default_prefix: dh_testing
 imports:
   - linkml:types
 
+subsets:
+  - subset1
+  - subset2
+
+settings:
+  lc: '[a-z]+'
+  digits: '[0-9]+'
+
+
+enums:
+  test_enum_1:
+    permissible_values:
+      - pv1
+      - pv2
+      - pv3
+  test_enum_2:
+    permissible_values:
+      - pv7
+      - pv8
+      - pv9
+
 slots:
-  test_slot_1:
-    title: "Test Slot 1"
-    description: "Test slot 1"
+  test_identifier:
+    description: "Test Identifier"
+    identifier: true
+    title: "Test Identifier"
+    comments:
+      - comment1
+      - comment2
+    notes:
+      - note1
+      - note2
+    todos:
+      - todo1
+      - todo2
+    slot_uri: http://example.com/dh_testing/test_uri
+
+  test_integer:
+    range: integer
+
+  test_float:
+    description: "Test Float"
+    range: float
+
+  test_required:
     required: true
+
+  test_recommended:
+    recommended: true
+
+  test_2_to_9:
+    range: integer
+    minimum_value: 2
+    maximum_value: 9
+
+  test_4_5_plus:
+    range: float
+    minimum_value: 4.5
+
+  test_int_mixin:
+    range: integer
+    mixin: true
+    description: "I am a mixin"
+
+  test_using_int_mixin:
+    mixins:
+      - test_int_mixin
+
+  test_sv_enum:
+    range: test_enum_1
     multivalued: false
 
-  test_slot_2:
-    title: "Test Slot 2"
-    description: "Test slot 2"
-    required: true
-    multivalued: false
+  test_mv_enum:
+    range: test_enum_1
+    multivalued: true
+
+  test_mv_string:
+    range: string
+    multivalued: true
+
+  test_ifabsent:
+    ifabsent: absent
+
+  test_with_aliases:
+    aliases:
+      - alias1
+      - alias2
+      - alias3
+
+  test_with_examples:
+    examples:
+      - value: "example1"
+      - value: "example2"
+
+  test_Z_low_rank:
+    rank: 1
+
+  test_A_high_rank:
+    rank: 2
+
+  test_abstract:
+    abstract: true
+
+  test_deprecated:
+    deprecated: I do not want to see this slot in the DH interface
+
+  test_with_see_alsos:
+    see_also:
+      - http://example.com/dh_testing/test_see_also1
+      - http://example.com/dh_testing/test_see_also2
+      - http://example.com/dh_testing/test_see_also3
+
+  test_in_subset:
+    in_subset:
+      - subset1
+      - subset2
+
+  test_boolean:
+    range: boolean
+
+  test_date:
+    range: date
+
+  test_time:
+    range: time
+
+  test_date_time:
+    range: date_time
+
+  test_vowel_range:
+    pattern: "^[aeiou]+$"
+
+  dh_section:
+    name: dh_section
+    description: A section (ie group if columns) within a DataHarmonizer interface
+
+  Sample ID:
+    name: Sample ID
+    rank: 1
+    is_a: dh_section
+
+  sample_id_1:
+    slot_group: Sample ID
+    rank: 1
+
+  sample_id_2:
+    slot_group: Sample ID
+    rank: 2
+
+  test_any_of_enums:
+    any_of:
+      - range: test_enum_1
+      - range: test_enum_2
+
+  test_structured_pattern:
+    structured_pattern:
+      syntax: '{lc} {digits}'
+      partial_match: false
+      interpolated: true
 
 classes:
   test_class:
     slots:
-      - test_slot_1
-      - test_slot_2
+      - sample_id_1
+      - sample_id_2
+      - test_2_to_9
+      - test_4_5_plus
+      - test_A_high_rank
+      - test_Z_low_rank
+      - test_abstract
+      - test_boolean
+      - test_date
+      - test_date_time
+      - test_deprecated
+      - test_float
+      - test_identifier
+      - test_ifabsent
+      - test_in_subset
+      - test_int_mixin
+      - test_integer
+      - test_mv_enum
+      - test_mv_string
+      - test_recommended
+      - test_required
+      - test_sv_enum
+      - test_time
+      - test_using_int_mixin
+      - test_vowel_range
+      - test_with_aliases
+      - test_with_examples
+      - test_with_see_alsos
+      - test_any_of_enums
+      - test_structured_pattern
+
+
