@@ -1,11 +1,11 @@
 .PHONY: all clean make_interface
 
-all: clean DataHarmonizer/web/templates/dh_testing/schema.json target/project/dh_testing.py src/schema/dh_testing_generated.yaml
+all: clean web/schemas/dh_testing.json target/project/dh_testing.py src/schema/dh_testing_generated.yaml
 
 clean:
 	mkdir -p target
 	mkdir -p logs
-	rm -rf DataHarmonizer/web/templates/dh_testing/*
+	rm -rf web/schemas/dh_testing.json
 	rm -rf src/schema/dh_testing_from_sheets.yaml
 	rm -rf src/schema/dh_testing_generated.yaml
 	rm -rf src/schema/dh_testing_subsets_from_sheets.yaml
@@ -66,8 +66,8 @@ target/project/dh_testing.py: src/schema/dh_testing_core.yaml src/schema/dh_test
 		--dir target/project $<
 
 
-DataHarmonizer/web/templates/dh_testing/schema.json: src/schema/dh_testing_core.yaml src/schema/dh_testing_from_sheets.yaml
-	echo "export default {};" > DataHarmonizer/web/templates/dh_testing/export.js
+web/schemas/dh_testing.json: src/schema/dh_testing_core.yaml src/schema/dh_testing_from_sheets.yaml
+	mkdir -p web/schemas
 	poetry run gen-linkml --format json --mergeimports $< > $@
 
 

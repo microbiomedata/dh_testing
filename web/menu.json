@@ -1,0 +1,14 @@
+{
+  "dh_testing": {
+    "complex_tests": {
+      "name": "complex_tests",
+      "status": "published",
+      "display": true
+    },
+    "test_class": {
+      "name": "test_class",
+      "status": "published",
+      "display": true
+    }
+  }
+}

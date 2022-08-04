@@ -1,0 +1,331 @@
+name: dh_testing_from_sheets
+description: DH Testing, from sheets
+todos:
+- slots test_any_of_enums todo test_structured_pattern are defined in file dh_testing_core.yaml
+id: http://example.com/dh_testing_from_sheets
+imports:
+- linkml:types
+prefixes:
+  dh_testing:
+    prefix_prefix: dh_testing
+    prefix_reference: http://example.com/dh_testing/
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+default_prefix: dh_testing
+default_range: string
+enums:
+  test_enum_1:
+    name: test_enum_1
+    from_schema: http://example.com/dh_testing_from_sheets
+    permissible_values:
+      pv1:
+        text: pv1
+      pv2:
+        text: pv2
+      pv3:
+        text: pv3
+slots:
+  generic_slot:
+    name: generic_slot
+    from_schema: http://example.com/dh_testing_from_sheets
+  sample_id_1:
+    name: sample_id_1
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '1'
+    slot_group: sample_id
+  sample_id_2:
+    name: sample_id_2
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '2'
+    slot_group: sample_id
+  test_2_to_9:
+    name: test_2_to_9
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '3'
+    slot_group: non_generic
+    range: integer
+    minimum_value: '2'
+    maximum_value: '9'
+  test_4_plus_float:
+    name: test_4_plus_float
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '4'
+    slot_group: non_generic
+    range: float
+    minimum_value: '4'
+  test_A_high_rank:
+    name: test_A_high_rank
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '2'
+    slot_group: non_generic
+  test_abstract:
+    name: test_abstract
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '5'
+    abstract: true
+    slot_group: non_generic
+  test_boolean:
+    name: test_boolean
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '6'
+    slot_group: non_generic
+    range: boolean
+  test_date:
+    name: test_date
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '7'
+    slot_group: non_generic
+    range: date
+  test_date_time:
+    name: test_date_time
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '8'
+    slot_group: non_generic
+    range: datetime
+  test_deprecated:
+    name: test_deprecated
+    deprecated: I do not want to see this slot in the DH interface
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '9'
+    slot_group: non_generic
+  test_float:
+    name: test_float
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '10'
+    slot_group: non_generic
+    range: float
+  test_identifier:
+    name: test_identifier
+    description: A value that distinguishes this entitiy for all other entities of
+      any type
+    title: Test Identifier
+    todos:
+    - todo1
+    - todo2
+    notes:
+    - note1
+    - note2
+    comments:
+    - comment1
+    - comment2
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '12'
+    identifier: true
+    slot_group: sample_id
+  test_ifabsent:
+    name: test_ifabsent
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '13'
+    ifabsent: 'true'
+    slot_group: non_generic
+  test_int_mixin:
+    name: test_int_mixin
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '15'
+    mixin: true
+    slot_group: non_generic
+    range: integer
+  test_integer:
+    name: test_integer
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '16'
+    slot_group: non_generic
+    range: integer
+  test_mv_enum:
+    name: test_mv_enum
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '17'
+    multivalued: true
+    slot_group: non_generic
+    range: test_enum_1
+  test_mv_string:
+    name: test_mv_string
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '18'
+    multivalued: true
+    slot_group: non_generic
+  test_recommended:
+    name: test_recommended
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '19'
+    slot_group: non_generic
+    recommended: true
+  test_required:
+    name: test_required
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '20'
+    slot_group: non_generic
+    required: true
+  test_sv_enum:
+    name: test_sv_enum
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '21'
+    slot_group: non_generic
+    range: test_enum_1
+  test_time:
+    name: test_time
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '22'
+    slot_group: non_generic
+    range: time
+  test_using_int_mixin:
+    name: test_using_int_mixin
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '23'
+    mixins:
+    - test_int_mixin
+    slot_group: non_generic
+  test_vowel_pattern:
+    name: test_vowel_pattern
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '24'
+    slot_group: non_generic
+    pattern: ^[aeiou]+$
+  test_with_aliases:
+    name: test_with_aliases
+    from_schema: http://example.com/dh_testing_from_sheets
+    aliases:
+    - alias1
+    - alias2
+    - alias3
+    rank: '25'
+    slot_group: non_generic
+  test_with_examples:
+    name: test_with_examples
+    examples:
+    - value: example1
+    - value: example2
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '26'
+    slot_group: non_generic
+  test_with_see_alsos:
+    name: test_with_see_alsos
+    from_schema: http://example.com/dh_testing_from_sheets
+    see_also:
+    - dh_testing:test_see_also_1
+    - dh_testing:test_see_also_2
+    rank: '27'
+    slot_group: non_generic
+  test_with_slot_uri:
+    name: test_with_slot_uri
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '28'
+    slot_uri: dh_testing:test_uri
+    slot_group: non_generic
+  test_Z_low_rank:
+    name: test_Z_low_rank
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '1'
+    slot_group: non_generic
+  dh_section:
+    name: dh_section
+    description: A section (ie group if columns) within a DataHarmonizer interface
+    from_schema: http://example.com/dh_testing_from_sheets
+  non_generic:
+    name: non_generic
+    title: Non Generic
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '2'
+    is_a: dh_section
+  sample_id:
+    name: sample_id
+    title: Sample ID
+    from_schema: http://example.com/dh_testing_from_sheets
+    rank: '1'
+    is_a: dh_section
+classes:
+  test_class:
+    name: test_class
+    comments:
+    - A class that corresponds to one DataHarmonizer interface
+    from_schema: http://example.com/dh_testing_from_sheets
+    slots:
+    - generic_slot
+    - sample_id_1
+    - sample_id_2
+    - test_2_to_9
+    - test_4_plus_float
+    - test_A_high_rank
+    - test_abstract
+    - test_boolean
+    - test_date
+    - test_date_time
+    - test_deprecated
+    - test_float
+    - test_identifier
+    - test_ifabsent
+    - test_int_mixin
+    - test_integer
+    - test_mv_enum
+    - test_mv_string
+    - test_recommended
+    - test_required
+    - test_sv_enum
+    - test_time
+    - test_using_int_mixin
+    - test_vowel_pattern
+    - test_with_aliases
+    - test_with_examples
+    - test_with_see_alsos
+    - test_with_slot_uri
+    - test_Z_low_rank
+    slot_usage:
+      generic_slot:
+        name: generic_slot
+      sample_id_1:
+        name: sample_id_1
+      sample_id_2:
+        name: sample_id_2
+      test_2_to_9:
+        name: test_2_to_9
+      test_4_plus_float:
+        name: test_4_plus_float
+      test_A_high_rank:
+        name: test_A_high_rank
+      test_abstract:
+        name: test_abstract
+      test_boolean:
+        name: test_boolean
+      test_date:
+        name: test_date
+      test_date_time:
+        name: test_date_time
+      test_deprecated:
+        name: test_deprecated
+      test_float:
+        name: test_float
+      test_identifier:
+        name: test_identifier
+      test_ifabsent:
+        name: test_ifabsent
+      test_int_mixin:
+        name: test_int_mixin
+      test_integer:
+        name: test_integer
+      test_mv_enum:
+        name: test_mv_enum
+      test_mv_string:
+        name: test_mv_string
+      test_recommended:
+        name: test_recommended
+      test_required:
+        name: test_required
+      test_sv_enum:
+        name: test_sv_enum
+      test_time:
+        name: test_time
+      test_using_int_mixin:
+        name: test_using_int_mixin
+      test_vowel_pattern:
+        name: test_vowel_pattern
+      test_with_aliases:
+        name: test_with_aliases
+      test_with_examples:
+        name: test_with_examples
+      test_with_see_alsos:
+        name: test_with_see_alsos
+      test_with_slot_uri:
+        name: test_with_slot_uri
+      test_Z_low_rank:
+        name: test_Z_low_rank
