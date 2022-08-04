@@ -1,0 +1,1142 @@
+{
+  "name": "dh_testing",
+  "description": "DH Testing",
+  "id": "http://example.com/dh_testing",
+  "version": "1.0",
+  "prefixes": {
+    "linkml": {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    "dh_testing": {
+      "prefix_prefix": "dh_testing",
+      "prefix_reference": "http://example.com/dh_testing/"
+    },
+    "xsd": {
+      "prefix_prefix": "xsd",
+      "prefix_reference": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "shex": {
+      "prefix_prefix": "shex",
+      "prefix_reference": "http://www.w3.org/ns/shex#"
+    }
+  },
+  "default_prefix": "dh_testing",
+  "default_range": "string",
+  "subsets": {
+    "subset1": {
+      "name": "subset1",
+      "description": "subset one",
+      "from_schema": "http://example.com/dh_testing"
+    },
+    "subset2": {
+      "name": "subset2",
+      "description": "subset two",
+      "from_schema": "http://example.com/dh_testing"
+    }
+  },
+  "types": {
+    "string": {
+      "name": "string",
+      "description": "A character string",
+      "from_schema": "http://example.com/dh_testing",
+      "base": "str",
+      "uri": "xsd:string"
+    },
+    "integer": {
+      "name": "integer",
+      "description": "An integer",
+      "from_schema": "http://example.com/dh_testing",
+      "base": "int",
+      "uri": "xsd:integer"
+    },
+    "boolean": {
+      "name": "boolean",
+      "description": "A binary (true or false) value",
+      "from_schema": "http://example.com/dh_testing",
+      "base": "Bool",
+      "uri": "xsd:boolean",
+      "repr": "bool"
+    },
+    "float": {
+      "name": "float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "from_schema": "http://example.com/dh_testing",
+      "base": "float",
+      "uri": "xsd:float"
+    },
+    "double": {
+      "name": "double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "from_schema": "http://example.com/dh_testing",
+      "base": "float",
+      "uri": "xsd:double"
+    },
+    "decimal": {
+      "name": "decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "from_schema": "http://example.com/dh_testing",
+      "base": "Decimal",
+      "uri": "xsd:decimal"
+    },
+    "time": {
+      "name": "time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time"
+      ],
+      "from_schema": "http://example.com/dh_testing",
+      "base": "XSDTime",
+      "uri": "xsd:dateTime",
+      "repr": "str"
+    },
+    "date": {
+      "name": "date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time"
+      ],
+      "from_schema": "http://example.com/dh_testing",
+      "base": "XSDDate",
+      "uri": "xsd:date",
+      "repr": "str"
+    },
+    "datetime": {
+      "name": "datetime",
+      "description": "The combination of a date and time",
+      "from_schema": "http://example.com/dh_testing",
+      "base": "XSDDateTime",
+      "uri": "xsd:dateTime",
+      "repr": "str"
+    },
+    "date_or_datetime": {
+      "name": "date_or_datetime",
+      "description": "Either a date or a datetime",
+      "from_schema": "http://example.com/dh_testing",
+      "base": "str",
+      "uri": "linkml:DateOrDatetime",
+      "repr": "str"
+    },
+    "uriorcurie": {
+      "name": "uriorcurie",
+      "description": "a URI or a CURIE",
+      "from_schema": "http://example.com/dh_testing",
+      "base": "URIorCURIE",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "uri": {
+      "name": "uri",
+      "description": "a complete URI",
+      "from_schema": "http://example.com/dh_testing",
+      "base": "URI",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "ncname": {
+      "name": "ncname",
+      "description": "Prefix part of CURIE",
+      "from_schema": "http://example.com/dh_testing",
+      "base": "NCName",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "objectidentifier": {
+      "name": "objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "comments": [
+        "Used for inheritence and type checking"
+      ],
+      "from_schema": "http://example.com/dh_testing",
+      "base": "ElementIdentifier",
+      "uri": "shex:iri",
+      "repr": "str"
+    },
+    "nodeidentifier": {
+      "name": "nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "from_schema": "http://example.com/dh_testing",
+      "base": "NodeIdentifier",
+      "uri": "shex:nonLiteral",
+      "repr": "str"
+    }
+  },
+  "enums": {
+    "test_enum_2": {
+      "name": "test_enum_2",
+      "from_schema": "http://example.com/dh_testing",
+      "permissible_values": {
+        "pv2_1": {
+          "text": "pv2_1"
+        },
+        "pv2_2": {
+          "text": "pv2_2"
+        },
+        "pv_2_3": {
+          "text": "pv_2_3"
+        }
+      }
+    },
+    "test_enum_3": {
+      "name": "test_enum_3",
+      "from_schema": "http://example.com/dh_testing",
+      "permissible_values": {
+        "pv3_1": {
+          "text": "pv3_1"
+        },
+        "pv3_2": {
+          "text": "pv3_2"
+        },
+        "pv3_3": {
+          "text": "pv3_3"
+        }
+      }
+    },
+    "test_enum_1": {
+      "name": "test_enum_1",
+      "from_schema": "http://example.com/dh_testing",
+      "permissible_values": {
+        "pv1": {
+          "text": "pv1"
+        },
+        "pv2": {
+          "text": "pv2"
+        },
+        "pv3": {
+          "text": "pv3"
+        }
+      }
+    }
+  },
+  "slots": {
+    "test_any_of_enums": {
+      "name": "test_any_of_enums",
+      "from_schema": "http://example.com/dh_testing",
+      "any_of": [
+        {
+          "range": "test_enum_2"
+        },
+        {
+          "range": "test_enum_3"
+        }
+      ]
+    },
+    "test_structured_pattern": {
+      "name": "test_structured_pattern",
+      "from_schema": "http://example.com/dh_testing",
+      "structured_pattern": {
+        "syntax": "{lc} {digits}",
+        "interpolated": true,
+        "partial_match": false
+      }
+    },
+    "test_in_subset": {
+      "name": "test_in_subset",
+      "in_subset": [
+        "subset1",
+        "subset2"
+      ],
+      "from_schema": "http://example.com/dh_testing"
+    },
+    "generic_slot": {
+      "name": "generic_slot",
+      "from_schema": "http://example.com/dh_testing"
+    },
+    "sample_id_1": {
+      "name": "sample_id_1",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 1,
+      "slot_group": "sample_id"
+    },
+    "sample_id_2": {
+      "name": "sample_id_2",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 2,
+      "slot_group": "sample_id"
+    },
+    "test_2_to_9": {
+      "name": "test_2_to_9",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 3,
+      "slot_group": "non_generic",
+      "range": "integer",
+      "minimum_value": 2,
+      "maximum_value": 9
+    },
+    "test_4_plus_float": {
+      "name": "test_4_plus_float",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 4,
+      "slot_group": "non_generic",
+      "range": "float",
+      "minimum_value": 4
+    },
+    "test_A_high_rank": {
+      "name": "test_A_high_rank",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 2,
+      "slot_group": "non_generic"
+    },
+    "test_abstract": {
+      "name": "test_abstract",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 5,
+      "abstract": true,
+      "slot_group": "non_generic"
+    },
+    "test_boolean": {
+      "name": "test_boolean",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 6,
+      "slot_group": "non_generic",
+      "range": "boolean"
+    },
+    "test_date": {
+      "name": "test_date",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 7,
+      "slot_group": "non_generic",
+      "range": "date"
+    },
+    "test_date_time": {
+      "name": "test_date_time",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 8,
+      "slot_group": "non_generic",
+      "range": "datetime"
+    },
+    "test_deprecated": {
+      "name": "test_deprecated",
+      "deprecated": "I do not want to see this slot in the DH interface",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 9,
+      "slot_group": "non_generic"
+    },
+    "test_float": {
+      "name": "test_float",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 10,
+      "slot_group": "non_generic",
+      "range": "float"
+    },
+    "test_identifier": {
+      "name": "test_identifier",
+      "description": "A value that distinguishes this entitiy for all other entities of any type",
+      "title": "Test Identifier",
+      "todos": [
+        "todo1",
+        "todo2"
+      ],
+      "notes": [
+        "note1",
+        "note2"
+      ],
+      "comments": [
+        "comment1",
+        "comment2"
+      ],
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 12,
+      "identifier": true,
+      "slot_group": "sample_id"
+    },
+    "test_ifabsent": {
+      "name": "test_ifabsent",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 13,
+      "ifabsent": "true",
+      "slot_group": "non_generic"
+    },
+    "test_int_mixin": {
+      "name": "test_int_mixin",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 15,
+      "mixin": true,
+      "slot_group": "non_generic",
+      "range": "integer"
+    },
+    "test_integer": {
+      "name": "test_integer",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 16,
+      "slot_group": "non_generic",
+      "range": "integer"
+    },
+    "test_mv_enum": {
+      "name": "test_mv_enum",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 17,
+      "multivalued": true,
+      "slot_group": "non_generic",
+      "range": "test_enum_1"
+    },
+    "test_mv_string": {
+      "name": "test_mv_string",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 18,
+      "multivalued": true,
+      "slot_group": "non_generic"
+    },
+    "test_recommended": {
+      "name": "test_recommended",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 19,
+      "slot_group": "non_generic",
+      "recommended": true
+    },
+    "test_required": {
+      "name": "test_required",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 20,
+      "slot_group": "non_generic",
+      "required": true
+    },
+    "test_sv_enum": {
+      "name": "test_sv_enum",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 21,
+      "slot_group": "non_generic",
+      "range": "test_enum_1"
+    },
+    "test_time": {
+      "name": "test_time",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 22,
+      "slot_group": "non_generic",
+      "range": "time"
+    },
+    "test_using_int_mixin": {
+      "name": "test_using_int_mixin",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 23,
+      "mixins": [
+        "test_int_mixin"
+      ],
+      "slot_group": "non_generic"
+    },
+    "test_vowel_pattern": {
+      "name": "test_vowel_pattern",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 24,
+      "slot_group": "non_generic",
+      "pattern": "^[aeiou]+$"
+    },
+    "test_with_aliases": {
+      "name": "test_with_aliases",
+      "from_schema": "http://example.com/dh_testing",
+      "aliases": [
+        "alias1",
+        "alias2",
+        "alias3"
+      ],
+      "rank": 25,
+      "slot_group": "non_generic"
+    },
+    "test_with_examples": {
+      "name": "test_with_examples",
+      "examples": [
+        {
+          "value": "example1"
+        },
+        {
+          "value": "example2"
+        }
+      ],
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 26,
+      "slot_group": "non_generic"
+    },
+    "test_with_see_alsos": {
+      "name": "test_with_see_alsos",
+      "from_schema": "http://example.com/dh_testing",
+      "see_also": [
+        "dh_testing:test_see_also_1",
+        "dh_testing:test_see_also_2"
+      ],
+      "rank": 27,
+      "slot_group": "non_generic"
+    },
+    "test_with_slot_uri": {
+      "name": "test_with_slot_uri",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 28,
+      "slot_uri": "dh_testing:test_uri",
+      "slot_group": "non_generic"
+    },
+    "test_Z_low_rank": {
+      "name": "test_Z_low_rank",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 1,
+      "slot_group": "non_generic"
+    },
+    "dh_section": {
+      "name": "dh_section",
+      "description": "A section (ie group if columns) within a DataHarmonizer interface",
+      "from_schema": "http://example.com/dh_testing"
+    },
+    "non_generic": {
+      "name": "non_generic",
+      "title": "Non Generic",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 2,
+      "is_a": "dh_section"
+    },
+    "sample_id": {
+      "name": "sample_id",
+      "title": "Sample ID",
+      "from_schema": "http://example.com/dh_testing",
+      "rank": 1,
+      "is_a": "dh_section"
+    }
+  },
+  "classes": {
+    "complex_tests": {
+      "name": "complex_tests",
+      "from_schema": "http://example.com/dh_testing",
+      "slots": [
+        "test_any_of_enums",
+        "test_structured_pattern",
+        "test_in_subset"
+      ],
+      "attributes": {
+        "test_any_of_enums": {
+          "name": "test_any_of_enums",
+          "from_schema": "http://example.com/dh_testing",
+          "alias": "test_any_of_enums",
+          "owner": "complex_tests",
+          "domain_of": [
+            "complex_tests"
+          ],
+          "range": "string",
+          "any_of": [
+            {
+              "range": "test_enum_2"
+            },
+            {
+              "range": "test_enum_3"
+            }
+          ]
+        },
+        "test_structured_pattern": {
+          "name": "test_structured_pattern",
+          "from_schema": "http://example.com/dh_testing",
+          "alias": "test_structured_pattern",
+          "owner": "complex_tests",
+          "domain_of": [
+            "complex_tests"
+          ],
+          "range": "string",
+          "structured_pattern": {
+            "syntax": "{lc} {digits}",
+            "interpolated": true,
+            "partial_match": false
+          }
+        },
+        "test_in_subset": {
+          "name": "test_in_subset",
+          "in_subset": [
+            "subset1",
+            "subset2"
+          ],
+          "from_schema": "http://example.com/dh_testing",
+          "alias": "test_in_subset",
+          "owner": "complex_tests",
+          "domain_of": [
+            "complex_tests"
+          ],
+          "range": "string"
+        }
+      }
+    },
+    "test_class": {
+      "name": "test_class",
+      "comments": [
+        "A class that corresponds to one DataHarmonizer interface"
+      ],
+      "from_schema": "http://example.com/dh_testing",
+      "slots": [
+        "generic_slot",
+        "sample_id_1",
+        "sample_id_2",
+        "test_2_to_9",
+        "test_4_plus_float",
+        "test_A_high_rank",
+        "test_abstract",
+        "test_boolean",
+        "test_date",
+        "test_date_time",
+        "test_deprecated",
+        "test_float",
+        "test_identifier",
+        "test_ifabsent",
+        "test_int_mixin",
+        "test_integer",
+        "test_mv_enum",
+        "test_mv_string",
+        "test_recommended",
+        "test_required",
+        "test_sv_enum",
+        "test_time",
+        "test_using_int_mixin",
+        "test_vowel_pattern",
+        "test_with_aliases",
+        "test_with_examples",
+        "test_with_see_alsos",
+        "test_with_slot_uri",
+        "test_Z_low_rank"
+      ],
+      "slot_usage": {
+        "generic_slot": {
+          "name": "generic_slot",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "sample_id_1": {
+          "name": "sample_id_1",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "sample_id_2": {
+          "name": "sample_id_2",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_2_to_9": {
+          "name": "test_2_to_9",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_4_plus_float": {
+          "name": "test_4_plus_float",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_A_high_rank": {
+          "name": "test_A_high_rank",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_abstract": {
+          "name": "test_abstract",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_boolean": {
+          "name": "test_boolean",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_date": {
+          "name": "test_date",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_date_time": {
+          "name": "test_date_time",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_deprecated": {
+          "name": "test_deprecated",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_float": {
+          "name": "test_float",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_identifier": {
+          "name": "test_identifier",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_ifabsent": {
+          "name": "test_ifabsent",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_int_mixin": {
+          "name": "test_int_mixin",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_integer": {
+          "name": "test_integer",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_mv_enum": {
+          "name": "test_mv_enum",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_mv_string": {
+          "name": "test_mv_string",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_recommended": {
+          "name": "test_recommended",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_required": {
+          "name": "test_required",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_sv_enum": {
+          "name": "test_sv_enum",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_time": {
+          "name": "test_time",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_using_int_mixin": {
+          "name": "test_using_int_mixin",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_vowel_pattern": {
+          "name": "test_vowel_pattern",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_with_aliases": {
+          "name": "test_with_aliases",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_with_examples": {
+          "name": "test_with_examples",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_with_see_alsos": {
+          "name": "test_with_see_alsos",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_with_slot_uri": {
+          "name": "test_with_slot_uri",
+          "domain_of": [
+            "test_class"
+          ]
+        },
+        "test_Z_low_rank": {
+          "name": "test_Z_low_rank",
+          "domain_of": [
+            "test_class"
+          ]
+        }
+      },
+      "attributes": {
+        "generic_slot": {
+          "name": "generic_slot",
+          "from_schema": "http://example.com/dh_testing",
+          "alias": "generic_slot",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "range": "string"
+        },
+        "sample_id_1": {
+          "name": "sample_id_1",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 1,
+          "alias": "sample_id_1",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "sample_id",
+          "range": "string"
+        },
+        "sample_id_2": {
+          "name": "sample_id_2",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 2,
+          "alias": "sample_id_2",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "sample_id",
+          "range": "string"
+        },
+        "test_2_to_9": {
+          "name": "test_2_to_9",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 3,
+          "alias": "test_2_to_9",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "integer",
+          "minimum_value": 2,
+          "maximum_value": 9
+        },
+        "test_4_plus_float": {
+          "name": "test_4_plus_float",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 4,
+          "alias": "test_4_plus_float",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "float",
+          "minimum_value": 4
+        },
+        "test_A_high_rank": {
+          "name": "test_A_high_rank",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 2,
+          "alias": "test_A_high_rank",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "string"
+        },
+        "test_abstract": {
+          "name": "test_abstract",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 5,
+          "abstract": true,
+          "alias": "test_abstract",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "string"
+        },
+        "test_boolean": {
+          "name": "test_boolean",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 6,
+          "alias": "test_boolean",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "boolean"
+        },
+        "test_date": {
+          "name": "test_date",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 7,
+          "alias": "test_date",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "date"
+        },
+        "test_date_time": {
+          "name": "test_date_time",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 8,
+          "alias": "test_date_time",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "datetime"
+        },
+        "test_deprecated": {
+          "name": "test_deprecated",
+          "deprecated": "I do not want to see this slot in the DH interface",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 9,
+          "alias": "test_deprecated",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "string"
+        },
+        "test_float": {
+          "name": "test_float",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 10,
+          "alias": "test_float",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "float"
+        },
+        "test_identifier": {
+          "name": "test_identifier",
+          "description": "A value that distinguishes this entitiy for all other entities of any type",
+          "title": "Test Identifier",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 12,
+          "identifier": true,
+          "alias": "test_identifier",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "sample_id",
+          "range": "string"
+        },
+        "test_ifabsent": {
+          "name": "test_ifabsent",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 13,
+          "ifabsent": "true",
+          "alias": "test_ifabsent",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "string"
+        },
+        "test_int_mixin": {
+          "name": "test_int_mixin",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 15,
+          "mixin": true,
+          "alias": "test_int_mixin",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "integer"
+        },
+        "test_integer": {
+          "name": "test_integer",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 16,
+          "alias": "test_integer",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "integer"
+        },
+        "test_mv_enum": {
+          "name": "test_mv_enum",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 17,
+          "multivalued": true,
+          "alias": "test_mv_enum",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "test_enum_1"
+        },
+        "test_mv_string": {
+          "name": "test_mv_string",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 18,
+          "multivalued": true,
+          "alias": "test_mv_string",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "string"
+        },
+        "test_recommended": {
+          "name": "test_recommended",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 19,
+          "alias": "test_recommended",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "string",
+          "recommended": true
+        },
+        "test_required": {
+          "name": "test_required",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 20,
+          "alias": "test_required",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "string",
+          "required": true
+        },
+        "test_sv_enum": {
+          "name": "test_sv_enum",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 21,
+          "alias": "test_sv_enum",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "test_enum_1"
+        },
+        "test_time": {
+          "name": "test_time",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 22,
+          "alias": "test_time",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "time"
+        },
+        "test_using_int_mixin": {
+          "name": "test_using_int_mixin",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 23,
+          "alias": "test_using_int_mixin",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "integer"
+        },
+        "test_vowel_pattern": {
+          "name": "test_vowel_pattern",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 24,
+          "alias": "test_vowel_pattern",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "string",
+          "pattern": "^[aeiou]+$"
+        },
+        "test_with_aliases": {
+          "name": "test_with_aliases",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 25,
+          "alias": "test_with_aliases",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "string"
+        },
+        "test_with_examples": {
+          "name": "test_with_examples",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 26,
+          "alias": "test_with_examples",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "string"
+        },
+        "test_with_see_alsos": {
+          "name": "test_with_see_alsos",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 27,
+          "alias": "test_with_see_alsos",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "string"
+        },
+        "test_with_slot_uri": {
+          "name": "test_with_slot_uri",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 28,
+          "slot_uri": "dh_testing:test_uri",
+          "alias": "test_with_slot_uri",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "string"
+        },
+        "test_Z_low_rank": {
+          "name": "test_Z_low_rank",
+          "from_schema": "http://example.com/dh_testing",
+          "rank": 1,
+          "alias": "test_Z_low_rank",
+          "owner": "test_class",
+          "domain_of": [
+            "test_class"
+          ],
+          "slot_group": "non_generic",
+          "range": "string"
+        }
+      }
+    }
+  },
+  "source_file": "src/schema/dh_testing_core.yaml",
+  "settings": {
+    "lc": {
+      "setting_key": "lc",
+      "setting_value": "[a-z]+"
+    },
+    "digits": {
+      "setting_key": "digits",
+      "setting_value": "[0-9]+"
+    }
+  },
+  "@type": "SchemaDefinition"
+}

@@ -1,7 +1,9 @@
 .DS_Store
 .idea/
 node_modules/
-yarn.lock
+
+# use yarn instead of npm
+package-lock.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
